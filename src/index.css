@@ -41,6 +41,7 @@ h1 {
   background-color: #e5771f;
   padding: 2.8rem 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
@@ -129,4 +130,18 @@ input[type="checkbox"] {
   text-align: center;
   font-weight: 700;
   padding: 3.2rem 0;
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  .add-form h3 {
+    font-size: 2rem;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }

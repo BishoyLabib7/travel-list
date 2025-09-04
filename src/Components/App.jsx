@@ -7,13 +7,6 @@ import { deleteItem, deleteItems, getItems, updateItem } from "../store";
 
 export default function App() {
   const [items, setItems] = useState([]);
-  useEffect(function () {
-    async function data() {
-      const allItems = await getItems();
-      setItems(allItems);
-    }
-    data();
-  }, []);
 
   function handelAddItem(item) {
     setItems((items) => [...items, item]);

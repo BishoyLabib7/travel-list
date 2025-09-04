@@ -3,15 +3,15 @@ import { useState } from "react";
 export function PackingList({ items, deleteItem, selectItem, cleanItems }) {
   const [sortBy, setSortBy] = useState("input");
 
-  let sortItems = items.slice();
+  let sortItems = items?.slice();
 
   if (sortBy === "description")
-    sortItems.sort((a, b) => a.itemName.localeCompare(b.itemName));
-  else sortItems.sort((a, b) => Number(a.packed) - Number(b.packed));
+    sortItems?.sort((a, b) => a.itemName.localeCompare(b.itemName));
+  else sortItems?.sort((a, b) => Number(a.packed) - Number(b.packed));
   return (
     <div className="list">
       <ul>
-        {sortItems.map((item) => (
+        {sortItems?.map((item) => (
           <Item
             item={item}
             key={item._id}

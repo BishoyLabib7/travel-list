@@ -1,6 +1,6 @@
 export function Stats({ items }) {
-  const itemPack = items.filter((item) => item.isPacked);
-  if (itemPack.length === 0)
+  const itemPack = items?.filter((item) => item.isPacked);
+  if (itemPack?.length === 0)
     return (
       <footer className="stats">
         {" "}
@@ -8,13 +8,13 @@ export function Stats({ items }) {
       </footer>
     );
   else {
-    const complete = Math.trunc((itemPack.length / items.length) * 100);
+    const complete = Math.trunc((itemPack?.length / items?.length) * 100);
 
     return (
       <footer className="stats">
         <em>
           {complete !== 100
-            ? `You have ${items.length} items on your list and you already packed ${itemPack.length} (${complete}%)`
+            ? `You have ${items?.length} items on your list and you already packed ${itemPack?.length} (${complete}%)`
             : "You got everything! Ready to go 🚀"}
         </em>
       </footer>
