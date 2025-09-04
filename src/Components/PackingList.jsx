@@ -14,7 +14,7 @@ export function PackingList({ items, deleteItem, selectItem, cleanItems }) {
         {sortItems?.map((item) => (
           <Item
             item={item}
-            key={item._id}
+            key={item.id}
             deleteItem={deleteItem}
             selectItem={selectItem}
           />
@@ -39,12 +39,12 @@ function Item({ item, deleteItem, selectItem }) {
       <input
         type="checkbox"
         defaultChecked={item.isPacked}
-        onChange={() => selectItem(item._id)}
+        onChange={() => selectItem(item.id)}
       ></input>
       <span style={item.isPacked ? { textDecoration: "line-through" } : {}}>
         {item.quantity} {item.itemName}
       </span>
-      <button onClick={() => deleteItem(item._id)}>❌</button>
+      <button onClick={() => deleteItem(item.id)}>❌</button>
     </li>
   );
 }

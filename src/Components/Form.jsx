@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { createItem } from "../store";
 
-export function Form({ AddItems }) {
+export function Form({ AddItems, i }) {
   const [itemName, setDescription] = useState("");
   const [quantity, setQuantity] = useState(1);
 
@@ -11,9 +10,9 @@ export function Form({ AddItems }) {
     // Don't save a empty description
     if (!itemName) return;
 
-    const newItem = { itemName, quantity };
+    const newItem = { id: i, itemName, quantity };
     AddItems(newItem);
-    createItem(newItem);
+
     // Default Mode
     setDescription("");
     setQuantity(1);
